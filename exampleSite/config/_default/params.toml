@@ -1,6 +1,6 @@
-logoText = "Zzo"
+logoText = "Dao of Healing"
 logoType = "short" # long, short
-description = "The Zzo theme for Hugo example site."
+description = "The Dao of Healing site."
 custom_css = []
 custom_js = []
 useFaviconGenerator = true # https://www.favicon-generator.org/
@@ -61,17 +61,17 @@ publicationIcon = "📚"
 typeIcon = "🎯"
 
 # whoami
-myname = "zzossig"
-email = "zzossig@gmail.com"
-whoami = "Web Developer"
+myname = "Xiaofeng Yang"
+email = "xxxxx@gmail.com"
+whoami = "Dao of Healing"
 bioImageUrl = ""
 useGravatar = false
-location = "Seoul, Korea"
-organization = "Hugo"
-link = "https://zzossig.io/ko"
+location = "Canada & China"
+organization = "Dao of Healing"
+link = "https://xxxx.io/"
 
 # sidebar
-enableBio = true
+enableBio = false
 enableBioImage = true
 enableSidebar = true
 enableSidebarTags = true

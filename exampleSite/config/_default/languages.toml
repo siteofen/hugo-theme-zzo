@@ -1,12 +1,12 @@
 [en]
-  title = "Hugo Zzo Theme"
+  title = "Dao of Healing"
   languageName = "English"
   weight = 1
   languagedir = "ltr"
   contentdir = "content/en"
 
 [zh]
-  title = "Hugo Zzo Theme"
+  title = "杨医生新冠义诊"
   languageName = "中文"
   weight = 2
   languagedir = "ltr"

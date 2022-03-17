@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - Dao of Healing
+      - HUGO
     subtitle:
-      - This is Dao of Healing
+      - The world’s fastest framework for building websites
     titleColor: 
     titleShadow: true
     titleFontSize: 44
@@ -46,14 +46,14 @@ header:
     paddingY: 0
     align: center
     title:
-      - my title
+      -
     subtitle:
-      - my subtitle
+      -
     titleColor:
-    titleShadow: true
+    titleShadow: false
     titleFontSize: 44
     subtitleColor:
-    subtitleCursive: true
+    subtitleCursive: false
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
 

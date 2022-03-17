@@ -117,3 +117,6 @@ other = "kimbie"
 
 [no-contents]
 other = "Nothing to Display"
+
+[404-pagenotfound]
+other = "Page not found"

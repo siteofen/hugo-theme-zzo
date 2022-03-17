@@ -32,7 +32,8 @@
   }
 
   &--hide {
-    top: -$grid_navbar_height;
+    //top: -$grid_navbar_height;
+    top: 0;
   }
 
   &--show {
@@ -461,7 +462,29 @@
     display: block;
   }
 }
+.theme-mobile-lang {
+  display: none;
+  outline: none;
+  position: absolute;
+  top: 0;
+  right: 35px * 3;
+  width: 35px;
+  height: $grid_navbar_height;
+  cursor: pointer;
+  z-index: z('modal');
 
+  &[data-ani="true"] {
+    @include animation('slide-in-down .5s .4s 1 ease both');
+  }
+
+  @media only screen and (max-width: 769px) {
+    @include flexbox();
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
 .navbarm {
   padding: 0 0.75rem;
   height: 100%;

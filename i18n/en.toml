@@ -120,3 +120,6 @@ other = "Nothing to Display"
 
 [404-pagenotfound]
 other = "Page not found"
+
+[404-pagenotfound-redirect]
+other = "Will redirect to main page after 3 seconds"

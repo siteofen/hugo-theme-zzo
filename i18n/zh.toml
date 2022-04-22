@@ -120,3 +120,6 @@ other = "Nothing to Display"
 
 [404-pagenotfound]
 other = "页面不存在"
+
+[404-pagenotfound-redirect]
+other = "3秒后将跳转到主页"

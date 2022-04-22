@@ -1,6 +1,9 @@
 {{ $params := .Params }}
+
+{{ if not $.Params.nodate }}
 <div class="single__infos">
   <time class="single__info" title="{{ i18n "tooltip-written" }}">{{ ($.Site.Params.writtenTimeIcon | safeHTML) | default "📅" }}&nbsp;{{ .Date.Format (i18n "single-dateformat") }} </time>
+
   {{ if ne (.Date.Format (i18n "summary-dateformat")) (.Lastmod.Format (i18n "summary-dateformat")) }}
   &nbsp;&middot;&nbsp; <time class="single__info" title="{{ i18n "tooltip-modified" }}"> {{ ($.Site.Params.modifiedTimeIcon | safeHTML) | default "📝" }}&nbsp;{{ .Lastmod.Format (i18n "single-dateformat") }} </time>
   {{ end }}
@@ -12,3 +15,4 @@
     {{ if (and .Site.Params.enableBusuanzi .Site.Params.busuanziPagePV) }} &middot; {{ ($.Site.Params.pagePvIcon | safeHTML) | default "👀" }}<span id="busuanzi_value_page_pv">...</span> {{ i18n "counter-page-pv" }}{{ end }}
   </span>
 </div>
+{{ end }}

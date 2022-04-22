@@ -1,4 +1,9 @@
-{{ partial "navbar/select-theme-mobile" . }}
+{{ if $.Site.Params.enableAppbarThemeIconMobile }}
+  {{ partial "navbar/select-theme-mobile" . }}
+{{ end }}
+{{ if $.Site.Params.enableAppbarLangIconMobile }}
+  {{ partial "navbar/language-icon-mobile" . }}
+{{ end }}
 {{ partial "search/site-search-mobile" . }}
 
 <a role="button" class="navbar__burger" aria-label="menu" aria-expanded="false"

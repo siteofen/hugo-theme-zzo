@@ -4,6 +4,6 @@
 {{ $extion := printf ".%s$" $ext }}
 {{ range readDir $filepath }}
   {{ if (findRE $extion .Name) }}
-    <a href="./../../files/{{ $path }}/{{ .Name }}" target="_blank">{{ .Name }}</a><br/>
+    <a href="./../../../files/{{ $path }}/{{ .Name }}" target="_blank">{{ .Name }}</a><br/>
   {{ end }}
 {{ end }}

@@ -1,0 +1,9 @@
+{{ $path := default "txt" (.Get "path" )}}
+{{ $ext := default "*" (.Get "ext" )}}
+{{ $filepath := printf "static/files/%s" $path }}
+{{ $extion := printf ".%s$" $ext }}
+{{ range readDir $filepath }}
+  {{ if (findRE $extion .Name) }}
+    <a href="./../../files/{{ $path }}/{{ .Name }}" target="_blank">{{ .Name }}</a><br/>
+  {{ end }}
+{{ end }}

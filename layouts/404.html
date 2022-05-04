@@ -1,8 +1,10 @@
 {{ define "main" }}
+<meta http-equiv="Refresh" content="3; url='/'" />
 <main class="main">
   <div class="not-found">
     <h1 class="h1 title">404</h1>
     <h6 class="h6 subtitle">{{T "404-pagenotfound"}}</h6>
+    <h6 class="h6 subtitle">{{T "404-pagenotfound-redirect"}}</h6>
   </div>
 </main>
 {{ partial "script/home-script" . }}

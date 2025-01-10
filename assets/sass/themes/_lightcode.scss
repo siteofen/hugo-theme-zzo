@@ -57,13 +57,13 @@ $lightcode: '';
   );
 } @else {
   $lightcode: (
-    content-code-color: #26a69a,
-    content-pre-main-color: #607d8b,
-    content-pre-color: #344952,
-    content-pre-number-color: #aaa,
-    content-pre-background-color: #eceff1,
-    content-pre-border-background-color: darken(#eceff1, 7%),
-    content-pre-header-background-color: darken(#eceff1, 3.5%),
-    content-pre-header-color: #344952,
-  );
+    content-code-color: #44AABB,
+    content-pre-main-color: #336699,
+    content-pre-color: #2D3C3F,
+    content-pre-number-color: #BBBBBB,
+    content-pre-background-color: #F1F3F5,
+    content-pre-border-background-color: darken(#F1F3F5, 7%),
+    content-pre-header-background-color: darken(#F1F3F5, 3.5%),
+    content-pre-header-color: #2D3C3F,
+);
 }

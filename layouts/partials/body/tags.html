@@ -1,9 +1,12 @@
 {{ $taxo := "tags" }}
+
+{{ if not $.Site.Params.notags }}
 <ul class="single__tags caption">
-  {{ if .Params.tags }}
+  {{ if $.Site.Params.tags }}
   {{ ($.Site.Params.tagIcon | safeHTML) | default "🏷️" }}
   {{ end }}
 {{ range (.GetTerms "tags") }}
   <li><a href="{{ .Permalink }}" class="single__tag" title="{{ .LinkTitle }}">#{{ .LinkTitle }}</a></li>
 {{ end }}
 </ul>
+{{ end }}

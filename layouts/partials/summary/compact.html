@@ -4,6 +4,7 @@
     <div class="summary-compact__meta">
       <header>
         <h5 class="title h6"><a href='{{ .Permalink }}'>{{- with .Params.pinned -}}{{ ($.Site.Params.pinTimeIcon | safeHTML) | default "📌" }}&nbsp;{{- end -}}{{ .Title }}</a> </h5>
+        {{ if not $.Site.Params.nodateForListPage }}
         <h6 class="subtitle caption">
           <time title="{{ i18n "tooltip-written" }}" dir="{{ if ne ($.Param "languagedir") "rtl" }}ltr{{ else }}rtl{{ end }}">{{ ($.Site.Params.writtenTimeIcon | safeHTML) | default "📅" }} {{ .Date.Format (i18n "summary-dateformat") }} </time> 
           {{ if ne (.Date.Format (i18n "summary-dateformat")) (.Lastmod.Format (i18n "summary-dateformat")) }}
@@ -14,6 +15,7 @@
           &middot; <span title="{{ i18n "single-writtenBy" }}" dir="{{ if ne ($.Param "languagedir") "rtl" }}ltr{{ else }}rtl{{ end }}">{{ if $params.AuthorEmoji }}{{ $params.AuthorEmoji }}{{ else }}{{ ($.Site.Params.authorIcon | safeHTML) | default "✍️" }}{{ end }}&nbsp;{{ . }}</span>
           {{ end }}
         </h6>
+        {{ end }}
       </header>
       <div class="summary-compact__tag--wrapper">
         {{ range $params.tags }}

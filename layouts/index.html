@@ -2,6 +2,7 @@
 
 {{ define "main" }}
 <main class="main inner" data-sidebar-position="{{ $.Param "sidebarPosition" }}">
+    {{ if $.Site.Params.enableSummaryListMainPage }}
     <div class="list__main {{ if $.Param "enableSidebar" }}{{ if eq ($.Param "sidebarPosition") "left" }}mr{{ else }}lm{{ end }}{{ else }}lmr{{ end }}">
         <div class="summary__container" data-display="block">
             {{ $filteredPages := .Site.RegularPages }}
@@ -22,6 +23,7 @@
         </div>
         {{ partial "search/search-result-desktop" . }}
     </div>
+    {{ end }}
 
     {{ if $.Param "enableSidebar" }}
         <aside class="list__sidebar {{ if eq ($.Param "sidebarPosition") "left" }}l{{ else }}r{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">

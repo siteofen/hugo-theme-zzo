@@ -1,3 +1,4 @@
+{{ if $.Site.Params.enableRelated }}
 <section class="related">
     {{ $related := .Site.RegularPages.Related . | first 5 }}
     {{ with $related }}
@@ -17,3 +18,4 @@
     </ul>
     {{ end }}
   </section>
+{{ end }}

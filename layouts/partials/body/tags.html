@@ -1,6 +1,6 @@
 {{ $taxo := "tags" }}
 
-{{ if not $.Site.Params.notags }}
+{{ if not $.Params.notags }}
 <ul class="single__tags caption">
   {{ if $.Site.Params.tags }}
   {{ ($.Site.Params.tagIcon | safeHTML) | default "🏷️" }}

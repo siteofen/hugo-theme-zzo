@@ -1,5 +1,5 @@
 
-{{ if not $.Site.Params.nodate }}
+{{ if not $.Params.nodate }}
 <div class="single__infos">
   <time class="single__info" title="{{ i18n "tooltip-written" }}">{{ ($.Site.Params.writtenTimeIcon | safeHTML) | default "📅" }}&nbsp;{{ .Date.Format (i18n "single-dateformat") }} </time>
 

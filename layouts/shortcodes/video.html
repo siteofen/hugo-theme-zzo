@@ -1,6 +1,6 @@
 {{ $poster := default "" (.Get "poster" )}}
 <div class="container">
-<video controls="controls" preload="none" poster="{{ $poster }}" onclick="this.play();">
+<video style="width: 75%; display: block; margin: 0 auto; " controls="controls" preload="none" poster="{{ $poster }}" onclick="this.play();">
 {{ with .Get "src" }}<source type="video/mp4" src="{{ . }}"></source>{{ end }}
 <!-- <p>Your browser does not support the video element.</p> -->
 </video>

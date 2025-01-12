@@ -1,0 +1,77 @@
+<style type="text/css">
+.bannar3 {
+    margin-top: 30px;
+    padding: 40px 20px;
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+}
+
+.bannar3 h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.bannar3 p {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #555;
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  /* 显示在背景图片的相对位置 */
+  position: absolute;
+  /* 使用绝对定位 */
+  top: 55%;
+  /* 距离父容器顶部 x% */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
+  /* 位偏移，完全居中 */
+  display: flex;
+}
+
+.buttons a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #4caf50);
+  /* 绿色到黄色渐变 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.buttons a:hover {
+  background: linear-gradient(90deg, #ffc619, #ffc619);
+  /* 深绿色到深黄色渐变 */
+  transform: scale(1.05);
+  /* 放大效果 */
+}
+</style>
+
+
+{{ $context := . }}
+<div class="bannar3" >
+    {{ with $context.Get "title" }}<p style="color: #555; margin-top: 1px; font-size: 36px; margin-bottom: 20px; font-weight: bold; line-height: 1.2;">{{ . }}</p>{{ end }}
+    {{ with $context.Get "description" }}<p style="color: #555;">{{ . }}</p>{{ end }}
+    <div class="buttons" style="margin-top: 95px;">
+      {{ range seq 1 3 }}
+
+        {{ $button := $context.Get (printf "button%d" .) }}
+        {{ $href := $context.Get (printf "href%d" .) }}
+        
+        {{ if and $button $href }}
+          {{ if and $button $href }}
+          <a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">{{ $button }}</a>
+          {{ end }}
+        {{ end }}
+
+      {{ end }}
+    </div>
+</div>

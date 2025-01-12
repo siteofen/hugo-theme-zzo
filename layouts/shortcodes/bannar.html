@@ -1,3 +1,141 @@
+<style type="text/css">
+.bannar {
+  padding: 40px 20px;
+  text-align: center;
+
+
+  // background-image: url('/img/bannar/background.png');
+  background-size: cover;
+  /* 让背景图片覆盖整个区域 */
+  background-position: center;
+  /* 确保图片居中显示 */
+  background-repeat: no-repeat;
+  /* 防止图片重复 */
+  color: white;
+  /* 根据背景调整文字颜色 */
+
+  border-radius: 10px;
+  /* 圆角 */
+
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  position: relative;
+  height: 320px;
+  /* 定义高度，确保子元素定位的基准 */
+
+
+  /* add background color */
+  background-color: #ffefbf;
+  border-radius: 10px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 0px solid;
+  border-image: linear-gradient(to bottom, #4caf50, #4caf50) 1;
+
+}
+
+
+.bannar h1 {
+  all: unset;
+  margin-top: 2px;
+  margin-bottom: 1px;
+
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.bannar p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.bannar .buttons a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #4caf50);
+  /* 绿色到黄色渐变 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.bannar .buttons a:hover {
+  background: linear-gradient(90deg, #ffc619, #ffc619);
+  /* 深绿色到深黄色渐变 */
+  transform: scale(1.05);
+  /* 放大效果 */
+}
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  /* 显示在背景图片的相对位置 */
+  position: absolute;
+  /* 使用绝对定位 */
+  top: 55%;
+  /* 距离父容器顶部 x% */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
+  /* 位偏移，完全居中 */
+  display: flex;
+}
+
+.buttons a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #4caf50);
+  /* 绿色到黄色渐变 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.buttons a:hover {
+  background: linear-gradient(90deg, #ffc619, #ffc619);
+  /* 深绿色到深黄色渐变 */
+  transform: scale(1.05);
+  /* 放大效果 */
+}
+
+
+.buttons-small {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons-small a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #4caf50);
+  /* 绿色到黄色渐变 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+}
+
+.buttons-small a:hover {
+  background: linear-gradient(90deg, #ffc619, #ffc619);
+  /* 深绿色到深黄色渐变 */
+  transform: scale(1.05);
+  /* 放大效果 */
+}
+</style>
+
 {{ $img := .Get "img" }}
 {{ if $img }}
 {{ $context := . }}
@@ -10,7 +148,7 @@
         {{ $button := $context.Get (printf "button%d" .) }}
         {{ $href := $context.Get (printf "href%d" .) }}
         {{ if and $button $href }}
-          <a href="{{ $href }}">{{ $button }}</a>
+          <a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">{{ $button }}</a>
         {{ end }}
 
       {{ end }}

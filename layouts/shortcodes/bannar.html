@@ -136,11 +136,12 @@
 }
 </style>
 
+
 {{ $img := .Get "img" }}
 {{ if $img }}
 {{ $context := . }}
 <div class="bannar" style="background-image: url({{ $img }}); ">
-    {{ with $context.Get "title" }}<h1 style="color: #fff; margin-top: 1px;">{{ . }}</h1>{{ end }}
+    {{ with $context.Get "title" }}<p style="color: #fff; margin-top: 2px; margin-bottom: 30px; font-size: 2.5rem; font-weight: 600; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}
     {{ with $context.Get "description" }}<p style="color: #fff;">{{ . }}</p>{{ end }}
     <div class="buttons">
       {{ range seq 1 3 }}

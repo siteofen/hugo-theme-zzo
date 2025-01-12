@@ -1,7 +1,7 @@
 {{ $img := .Get "img" }}
 {{ if $img }}
 {{ $context := . }}
-<div class="hero" style="background-image: url({{ $img }}); ">
+<div class="bannar" style="background-image: url({{ $img }}); ">
     {{ with $context.Get "title" }}<h1 style="color: #fff; margin-top: 1px;">{{ . }}</h1>{{ end }}
     {{ with $context.Get "description" }}<p style="color: #fff;">{{ . }}</p>{{ end }}
     <div class="buttons">

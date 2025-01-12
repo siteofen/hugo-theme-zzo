@@ -1,0 +1,26 @@
+{{ $img := .Get "img" }}
+{{ if $img }}
+<div class="hero" style="background-image: url({{ $img }}); ">
+    {{ with .Get "title" }}<h1 style="color: #fff; margin-top: 1px;">{{ . }}</h1>{{ end }}
+    {{ with .Get "description" }}<p style="color: #fff;">{{ . }}</p>{{ end }}
+    <div class="buttons">
+        {{ $button1 := .Get "button1" | default "Default Button" }}
+        {{ $href1 := .Get "href1" | default "#" }}
+        {{ if and (isset .Params "button1") (isset .Params "href1") }}
+          <a href="{{ $href1 }}">{{ $button1 }}</a>
+        {{ end }}
+
+        {{ $button2 := .Get "button2" | default "Default Button" }}
+        {{ $href2 := .Get "href2" | default "#" }}
+        {{ if and (isset .Params "button1") (isset .Params "href2") }}
+          <a href="{{ $href2 }}">{{ $button2 }}</a>
+        {{ end }}
+
+        {{ $button3 := .Get "button3" | default "Default Button" }}
+        {{ $href3 := .Get "href3" | default "#" }}
+        {{ if and (isset .Params "button3") (isset .Params "href3") }}
+          <a href="{{ $href3 }}">{{ $button3 }}</a>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

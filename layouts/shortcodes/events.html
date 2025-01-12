@@ -1,0 +1,28 @@
+<div class="events">
+    <div class="event-cards">
+        <div class="event-card">
+            {{ with .Get "title1" }}<h3 style="color: #4caf50;">{{ . }}</h3>{{ end }}
+            {{ with .Get "time1" }}<p>{{ . }}</p>{{ end }}
+            {{ with .Get "location1" }}<p>{{ . }}</p>{{ end }}
+            <p>
+            {{ with .Get "href1" }}<div class="buttons-small"><a href="{{ . }}">更多信息</a></div>
+            </p>{{ end }}
+        </div>
+        <div class="event-card">
+            {{ with .Get "title2" }}<h3 style="color: #4caf50;">{{ . }}</h3>{{ end }}
+            {{ with .Get "time2" }}<p>{{ . }}</p>{{ end }}
+            {{ with .Get "location2" }}<p>{{ . }}</p>{{ end }}
+            <p>
+            {{ with .Get "href2" }}<div class="buttons-small"><a href="{{ . }}">更多信息</a></div>
+            </p>{{ end }}
+        </div>
+        <div class="event-card">
+            {{ with .Get "title3" }}<h3 style="color: #4caf50;">{{ . }}</h3>{{ end }}
+            {{ with .Get "time3" }}<p>{{ . }}</p>{{ end }}
+            {{ with .Get "location3" }}<p>{{ . }}</p>{{ end }}
+            <p>
+            {{ with .Get "href3" }}<div class="buttons-small"><a href="{{ . }}">更多信息</a></div>
+            </p>{{ end }}
+        </div>
+    </div>
+</div>

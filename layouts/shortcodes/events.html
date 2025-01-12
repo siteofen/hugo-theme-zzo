@@ -106,7 +106,7 @@
             {{ with $context.Get (printf "href%d" .) }}
             {{ $href := . }}
             <p>
-                <div class="buttons-small"><a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">更多信息</a></div>
+                <div class="buttons-small"><a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">{{T "more-placeholder"}} >></a></div>
             </p>
             {{ end }}
         </div>

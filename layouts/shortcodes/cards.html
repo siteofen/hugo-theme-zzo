@@ -97,7 +97,7 @@
 <div class="events">
     <div class="event-cards">
         {{ $context := . }}
-        {{ range seq 1 5 }}
+        {{ range seq 1 8 }}
         {{ if $context.Get (printf "title%d" .) }}
         <div class="event-card">
             {{ with $context.Get (printf "title%d" .) }}<p style="color: #369; font-size: 1.2rem; font-weight: 600; text-align: center; margin-top: 1px; margin-bottom: 20px; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}

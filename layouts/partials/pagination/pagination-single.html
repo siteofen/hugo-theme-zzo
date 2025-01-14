@@ -1,4 +1,4 @@
-{{ if not $.Params.disablePagination }}
+{{ if and (not $.Params.disablePagination) (not $.Site.Params.disablePagination)}}
 <div class="grow"></div>
 <nav class="pagination-single">
   {{ if eq ($.Param "languagedir") "rtl" }}

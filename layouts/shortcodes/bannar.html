@@ -20,7 +20,7 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   position: relative;
 
-  height: 300px;
+  height: 270px;
   /* 定义高度，确保子元素定位的基准 */
 
 
@@ -87,7 +87,7 @@
   /* 显示在背景图片的相对位置 */
   position: absolute;
   /* 使用绝对定位 */
-  top: 55%;
+  top: 65%;
   /* 距离父容器顶部 x% */
   left: 50%;
   /* 水平居中 */
@@ -153,7 +153,7 @@
 {{ if $img }}
 {{ $context := . }}
 <div class="bannar" style="background-image: url({{ $img }}); ">
-    {{ with $context.Get "title" }}<p style="color: #fff; margin-top: 2px; margin-bottom: 30px; font-size: 2.5rem; font-weight: 600; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}
+    {{ with $context.Get "title" }}<p style="color: #fff; margin-top: 2px; margin-bottom: 15px; font-size: 2.5rem; font-weight: 600; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}
     {{ with $context.Get "description" }}<p style="color: #fff;">{{ . }}</p>{{ end }}
     <div class="buttons">
       {{ range seq 1 3 }}

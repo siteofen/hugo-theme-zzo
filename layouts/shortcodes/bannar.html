@@ -155,6 +155,7 @@
 <div class="bannar" style="background-image: url({{ $img }}); ">
     {{ with $context.Get "title" }}<p style="color: #fff; margin-top: 2px; margin-bottom: 15px; font-size: 2.5rem; font-weight: 600; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}
     {{ with $context.Get "description" }}<p style="color: #fff;">{{ . }}</p>{{ end }}
+    {{ with $context.Get "description2" }}<p style="color: #fff;">{{ . }}</p>{{ end }}
     <div class="buttons">
       {{ range seq 1 3 }}
 

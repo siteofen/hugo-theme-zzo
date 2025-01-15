@@ -7,13 +7,13 @@
 }
 
 .bannar3 h1 {
-    font-size: 36px;
+    font-size: 2rem;
     margin-bottom: 20px;
 }
 
 .bannar3 p {
     margin-top: 30px;
-    font-size: 18px;
+    font-size: 1rem;
     color: #555;
 }
 
@@ -39,7 +39,7 @@
   padding: 10px 20px;
   border-radius: 20px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1rem;
   color: white;
   background: linear-gradient(90deg, #4caf50, #4caf50);
   /* 绿色到黄色渐变 */
@@ -58,7 +58,7 @@
 
 {{ $context := . }}
 <div class="bannar3" >
-    {{ with $context.Get "title" }}<p style="color: #555; margin-top: 1px; font-size: 36px; margin-bottom: 20px; font-weight: bold; line-height: 1.2;">{{ . }}</p>{{ end }}
+    {{ with $context.Get "title" }}<p style="color: #555; margin-top: 1px; font-size: 2rem; margin-bottom: 20px; font-weight: bold; line-height: 1.2;">{{ . }}</p>{{ end }}
     {{ with $context.Get "description" }}<p style="color: #555;">{{ . }}</p>{{ end }}
     <div class="buttons" style="margin-top: 95px;">
       {{ range seq 1 3 }}

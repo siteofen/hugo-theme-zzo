@@ -23,7 +23,7 @@
 
       {{ if $menu.HasChildren }}
         <li class="navbarm__menu--item {{ if $active }}active{{ end }}">
-          <a href="{{ $menu.URL | relLangURL }}">
+          <a href="{{ $menu.URL | relLangURL }}" {{ with .Params.target }}target="{{ . }}" rel="noopener noreferrer"{{ end }}>
             {{ safeHTML $menu.Name }}
             {{ partial "svgs/arrow/keyboard-arrow-down.svg" (dict "width" 18 "height" 18) }}
           </a>
@@ -31,13 +31,13 @@
 
         {{ range .Children }}
           <li class="navbarm__menu--item navbarm__menu--subitem">
-            <a href="{{ .URL | relLangURL }}">{{ safeHTML .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" {{ with .Params.target }}target="{{ . }}" rel="noopener noreferrer"{{ end }}>{{ safeHTML .Name }}</a>
           </li>
         {{ end }}
 
       {{ else }}
         <li class="navbarm__menu--item {{ if $active }}active{{ end }}">
-          <a href="{{ $menu.URL | relLangURL }}">{{ safeHTML $menu.Name }}</a>
+          <a href="{{ $menu.URL | relLangURL }}" {{ with .Params.target }}target="{{ . }}" rel="noopener noreferrer"{{ end }}>{{ safeHTML $menu.Name }}</a>
         </li>
       {{ end }}
       

@@ -66,6 +66,31 @@
   /* 内容左对齐 */
 }
 
+.event-card .buttons-small a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #4caf50);
+  /* 绿色到黄色渐变 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+  width: auto;
+  max-width: 300px; /* Limit button width */
+  margin: 0 auto; /* Center-align the button if needed */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+
+.event-card .buttons-small a:hover {
+  background: linear-gradient(90deg, #ffc619, #ffc619);
+  /* 深绿色到深黄色渐变 */
+  transform: scale(1.05);
+  /* 放大效果 */
+}
 
 .buttons-small {
   margin-top: 10px;

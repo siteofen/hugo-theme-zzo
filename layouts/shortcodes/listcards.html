@@ -1,9 +1,16 @@
 <style type="text/css">
+
 /* Events Section */
+
 @media (max-width: 768px) {
   .event-cards {
     flex-direction: column;
     align-items: center;
+    gap: 15px;
+  }
+
+  .event-card {
+    width: 90%; /* Adjust for smaller screens */
   }
 }
 
@@ -11,7 +18,6 @@
   margin-top: 20px;
   margin-bottom: 2px;
   text-align: center;
-  // padding: 40px 20px;
 }
 
 .events h2 {
@@ -40,56 +46,75 @@
   transition: transform 0.3s ease;
   border: 2px solid;
   border-image: linear-gradient(to bottom, #4caf50, #4caf50) 1;
-  /* 渐变绿色到浅黄色 */
 }
 
 .event-card:hover {
   transform: translateY(-10px);
 }
 
-
 .event-card h3 {
   font-size: 1.2rem;
   font-weight: 600;
   color: #4caf50;
-  /* 绿色标题 */
   margin-top: 1px;
   margin-bottom: 10px;
   text-align: center;
-  /* 标题居中 */
 }
 
 .event-card p {
   font-size: 1rem;
   color: #777;
-  text-align: left;
-  /* 内容左对齐 */
 }
 
+.event-card .link-list {
+  margin-top: 10px;
+}
+
+.event-card .link-list a {
+  display: block; /* Each link on a new line */
+  color: #4caf50;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 5px 0;
+  transition: color 0.3s;
+}
+
+.event-card .link-list a:hover {
+  color: #ffc619; /* Highlight link on hover */
+}
+
+.event-card .link-list a:active {
+  color: #2e7d32; /* Darker green when active */
+}
 
 
 </style>
 
+
 <div class="events">
-    <div class="event-cards">
-        {{ $context := . }}
+  <div class="event-cards">
 
-        {{ range $i := seq 1 8 }}
-        {{ if $context.Get (printf "title%d" $i) }}
-        <div class="event-card">
+    {{ $context := . }}
 
-            {{ with $context.Get (printf "title%d" $i) }}<p style="color: #369; font-size: 1.2rem; font-weight: 600; text-align: center; margin-top: 1px; margin-bottom: 20px; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}
+    {{ range $i := seq 1 8 }}
+    {{ if $context.Get (printf "title%d" $i) }}
+    <div class="event-card">
 
-            {{ range $j := seq 1 20 }}
-            {{ $text := $context.Get (printf "text%d%d" $i $j) }}
-            {{ $href := $context.Get (printf "href%d%d" $i $j) }}
-            {{ if and $text $href }}
-            <li><a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">{{ $text }}</a></li>
-            {{ end }}
-            {{ end }}
+        {{ with $context.Get (printf "title%d" $i) }}<p style="color: #369; font-size: 1.2rem; font-weight: 600; text-align: center; margin-top: 1px; margin-bottom: 20px; font-weight: bold; line-height: 1.2; ">{{ . }}</p>{{ end }}
 
+        <div class="link-list">
+        {{ range $j := seq 1 20 }}
+        {{ $text := $context.Get (printf "text%d%d" $i $j) }}
+        {{ $href := $context.Get (printf "href%d%d" $i $j) }}
+        {{ if and $text $href }}
+        <a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">* {{ $text }}</a>
+        {{ end }}
+        {{ end }}
         </div>
-        {{ end }}
-        {{ end }}
+
     </div>
+    {{ end }}
+    {{ end }}
+
+  </div>
 </div>

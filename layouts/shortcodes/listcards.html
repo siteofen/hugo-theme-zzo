@@ -108,7 +108,7 @@
         {{ $text := $context.Get (printf "text%d%d" $i $j) }}
         {{ $href := $context.Get (printf "href%d%d" $i $j) }}
         {{ if and $text $href }}
-        <a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">* {{ $text }} ...</a>
+        <a href="{{ if not (or (hasPrefix $href "http://") (hasPrefix $href "https://")) }}{{ printf "%s%s/%s" $.Site.BaseURL $.Site.Language.Lang $href }}{{ else }}{{ $href }}{{ end }}">* {{ $text }} </a>
         {{ end }}
         {{ end }}
         </div>

@@ -1,0 +1,90 @@
+<style type="text/css">
+
+.buttons-small {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.buttons-small a {
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  background: linear-gradient(90deg, #4caf50, #4caf50);
+  /* 绿色到黄色渐变 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s, transform 0.3s;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.buttons-small a:hover {
+  background: linear-gradient(90deg, #ffc619, #ffc619);
+  /* 深绿色到深黄色渐变 */
+  transform: scale(1.05);
+  /* 放大效果 */
+}
+
+.buttons-small a:active {
+  color: white; /* Ensure the text remains white */
+  background: #4caf50; /* A darker green when clicked */
+}
+
+.buttons-small a:visited {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.buttons-small a.selected {
+  background: #ffffff;
+  color: red; /* Change the color to indicate selection */
+  font-size: 2rem;
+}
+
+</style>
+
+{{ $context := . }}
+
+{{ $link := $context.Get "link1" }}
+{{ $name := $context.Get "name1" | default 1 }}
+<h3 id="videotitle">{{ $name }}</h5>
+<center>
+<iframe id="videoFrame" width="560" height="315" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+</center>
+
+<div class="buttons-small">
+  {{ range $i := seq 1 30 }}
+  {{ if $context.Get (printf "link%d" $i) }}
+    {{ $name := $context.Get (printf "name%d" $i) | default $i }}
+
+    {{ with $context.Get (printf "link%d" $i) }}<a href="#" onclick="changeVideo('{{ . }}', '{{ $name }}')">{{ $name }}</a>{{ end }}
+  {{ end }}
+  {{ end }}
+</div>
+
+
+<script>
+    function changeVideo(url, title) {
+        document.getElementById("videoFrame").src = url;
+        document.getElementById("videotitle").innerText = title;
+    }
+/*
+    // Remove the "selected" class from all links
+    const links = document.querySelectorAll('.buttons-small a');
+    links.forEach(link => link.classList.remove('selected'));
+    // Add the "selected" class to the clicked link
+    event.target.classList.add('selected');
+
+    window.onload = function() {
+        // changeVideo("https://www.youtube.com/embed/VIDEO_ID_1");
+        // Optionally add the "selected" class to Video 1 by default
+        const firstLink = document.querySelector('.buttons-small a');
+        if (firstLink) {
+            firstLink.classList.add('selected');
+        }
+    };
+    */
+</script>

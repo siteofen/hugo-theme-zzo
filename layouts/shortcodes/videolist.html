@@ -34,14 +34,10 @@
 
 .buttons-small a:visited {
   color: white;
-  font-size: 2rem;
-  font-weight: bold;
 }
 
 .buttons-small a.selected {
   background: #ffffff;
-  color: red; /* Change the color to indicate selection */
-  font-size: 2rem;
 }
 
 </style>
@@ -71,20 +67,4 @@
         document.getElementById("videoFrame").src = url;
         document.getElementById("videotitle").innerText = title;
     }
-/*
-    // Remove the "selected" class from all links
-    const links = document.querySelectorAll('.buttons-small a');
-    links.forEach(link => link.classList.remove('selected'));
-    // Add the "selected" class to the clicked link
-    event.target.classList.add('selected');
-
-    window.onload = function() {
-        // changeVideo("https://www.youtube.com/embed/VIDEO_ID_1");
-        // Optionally add the "selected" class to Video 1 by default
-        const firstLink = document.querySelector('.buttons-small a');
-        if (firstLink) {
-            firstLink.classList.add('selected');
-        }
-    };
-    */
 </script>

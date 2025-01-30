@@ -48,7 +48,16 @@
 {{ $name := $context.Get "name1" | default 1 }}
 <h3 id="videotitle">{{ $name }}</h5>
 <center>
+<!--
 <iframe id="videoFrame" width="560" height="315" src="{{ $link }}" frameborder="0" allowfullscreen></iframe>
+-->
+
+{{ $poster := default "" (.Get "poster" )}}
+<video id="videoFrame" style="width: 75%; display: block; margin: 0 auto; " controls="controls" onclick="this.play();">
+<source type="video/mp4" src="{{ $link }}"></source>
+<!-- <p>Your browser does not support the video element.</p> -->
+</video>
+
 </center>
 
 <div class="buttons-small">

@@ -74,7 +74,11 @@
   }
 
   &__info {
-    word-break: keep-all;
+    /* word-break: keep-all; */
+    word-break: break-word; /* Ensures text wraps properly */
+    overflow-wrap: break-word;
+    white-space: normal;
+    display: inline-block;
     padding: 0 0.125rem;
   }
 

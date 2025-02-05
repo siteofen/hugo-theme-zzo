@@ -311,6 +311,10 @@
       margin-top: 0;
       padding: 0;
       list-style: disc outside none;
+      word-break: break-word; /* Ensures text wraps properly */
+      overflow-wrap: break-word;
+      white-space: normal; /* Prevents forcing everything onto one line */
+      display: inline-block; /* Prevents breaking at the start */
     }
 
     &[data-dir="rtl"] {

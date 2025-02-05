@@ -1,14 +1,14 @@
 .box {
   font-size: 0.925rem;
   font-family: $title-font;
-  /* word-break: keep-all; */
+  word-break: keep-all;
   padding: 0.5rem;
   margin: 2rem 0;
   border-radius: 0.5rem;
   word-break: break-word; /* Ensures text wraps properly */
   overflow-wrap: break-word;
   white-space: normal; /* Prevents forcing everything onto one line */
-  display: inline-block; /* Prevents breaking at the start */
+  //display: inline-block; /* Prevents breaking at the start */
 
   @include themify($themes) {
     border: 1px solid themed('content-box-border-color');
